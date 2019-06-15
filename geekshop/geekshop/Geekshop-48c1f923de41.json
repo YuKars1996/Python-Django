@@ -1,2 +1,2 @@
-{ "SOCIAL_AUTH_GOOGLE_OAUTH2_KEY": "571530186275-rvr9ubvaohvff9qc06lf7ip0tr4gjb5h.apps.googleusercontent.com",
-  "SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET": "A60eaHrZFJoXOzZfc_lZm9PL"}
+{ "SOCIAL_AUTH_GOOGLE_OAUTH2_KEY": "#здесь ключ",
+  "SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET": "#здесь секрет"}
