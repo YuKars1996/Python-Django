@@ -1,0 +1,24 @@
+{% extends 'authapp/base.html' %}
+{% load static %}
+
+{% block title %}
+             ToyRoom | Регистрация
+        {% endblock %}
+
+{% block container %}
+    <div class="bl-2">
+        <form method="post" class="form-horizontal">
+            {% csrf_token %}
+               <input type="hidden" name="next" value="{{ next }}">
+            {{ form.as_p }}
+            <input type="submit" value="Войти" class="form-control menu-link " >
+        </form>
+        <a href="{% url 'auth:register' %}" class="btn btn-round form-control ">
+        Зарегистрироваться
+        </a>
+            <a href="{% url 'social:begin' 'google-oauth2' %}?next=/" class="btn btn-round form-control but3 " >
+
+                <img class="icons" src="/static/img/google_plus.png">
+    </a>
+    </div>
+{% endblock %}

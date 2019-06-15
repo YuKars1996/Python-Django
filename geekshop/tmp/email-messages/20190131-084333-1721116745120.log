@@ -1,0 +1,14 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0YPRh9C10YLQvdC+0Lkg0LfQsNC/?=
+ =?utf-8?b?0LjRgdC4IFl1bEthcnM=?=
+From: django@geekshop.local
+To: lyly1001@yandex.ru
+Date: Thu, 31 Jan 2019 05:43:33 -0000
+Message-ID: <154891341370.10248.15970294284680797492@KARSAKOVY.Dlink>
+
+Для подтверждения учетной записи YulKars на портале http://localhost:8000 перейдите по ссылке: 
+http://localhost:8000/auth/verify/lyly1001@yandex.ru/084e6b2c5ba7ef7baa3edf41712ae7a9a1e973c9/
+-------------------------------------------------------------------------------

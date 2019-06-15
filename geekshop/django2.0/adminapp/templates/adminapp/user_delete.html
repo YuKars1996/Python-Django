@@ -1,0 +1,22 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+
+
+{% block container %}
+    <div class="user_delete user_record marg_0">
+       <p> Уверены, что хотите удалить <b>{{ user_to_delete.username }} {% if user_to_delete.first_name %}
+                    ({{ user_to_delete.first_name|title }}</b>
+                    {% if user_to_delete.last_name %}
+                        {{ user_to_delete.last_name|title }}
+                    {% endif %})
+                {% endif %}? </p>
+        <div class="knop">
+        <form method="post">
+            {% csrf_token %}
+            <input class="btn btn-danger button6 " type="submit" value="удалить">
+        </form>
+
+        <a href="{% url 'admin:index' %}" class="btn btn-success button6">отмена</a>
+            </div>
+    </div>
+{% endblock %}

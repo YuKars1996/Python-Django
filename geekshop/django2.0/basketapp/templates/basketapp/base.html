@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/stil.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Cinzel|Cormorant+SC" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'fonts/fonts.css' %}">
+{% endblock %}
+{% block js %}
+        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/basket_scripts.js' %}"></script>
+{% endblock %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+             ToyRoom | {{ title.title }}
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+    <div class="conteinerm-site">
+        <div class="top">
+            <div class="contair"></div>
+                {% include 'mainapp/includes/inc__main_menu.html' %}
+            {% block container %}
+
+            {% endblock %}
+        </div>
+
+        {% block footer %}
+        <div class="footer">
+            <div class="tex-foot">
+                <p class="foot colore2">Все права защищены &#64; KARSAKOVA</p>
+                <p class="foot"> <a class="colore" href="https://vk.com/public173903545" target="_blank">Группа ВК: https://vk.com/public173903545</p>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+</body>
+
+</html>

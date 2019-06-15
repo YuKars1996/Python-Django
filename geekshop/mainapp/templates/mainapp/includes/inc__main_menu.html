@@ -1,0 +1,63 @@
+{% load static %}
+<div class="header">
+<div class="menu">
+     <a href="{% url 'main:main' %}" class="logo"><img class="lg" src="{% static '/img/logo.png' %}" alt="Logo" width="240px" height="55px"></a>
+    <ul class="menu-head">
+        <li class="men-l"><a href="{% url 'main:main' %}" class="menu-link">ГЛАВНАЯ</a> </li>
+        <li class="men-l"><a href="{% url 'main:catalog' %}" class="menu-link">КАТАЛОГ</a></li>
+        <li class="men-l"><a href="{% url 'main:training' %}" class="menu-link">ДОСТАВКА</a></li>
+        <li class="men-l"><a href="{% url 'main:colls' %}" class="menu-link">КОНТАКТЫ</a></li>
+        <li class="men-l">
+            {%  if user.is_superuser %}
+            <a href="{% url 'admin:index' %}" class="menu-link">АДМИНКА</a>
+        {% endif %}
+        </li>
+        <li class="men-l">
+            {% if user.is_authenticated %}
+                      <li>
+        <div class="dropdown">
+           <a class="menu-link" href="" data-toggle="dropdown">
+               {{ user.first_name|default:'Пользователь' }}
+               <span class="caret"></span>
+           </a>
+           <ul class="dropdown-child menu-head actu">
+               <li class="men-l">
+                   <a href="{% url 'auth:update' %}" class="dropdown-child a menu-link">
+                       профиль
+                   </a>
+               </li>
+               <li class="men-l">
+                   <a href="{% url 'orders:index' %}" class="dropdown-child a menu-link">
+                       заказы
+                   </a>
+               </li>
+           </ul>
+       </div>
+    </li>
+                </li>
+                <li>
+                    <a href="{% url 'auth:logout' %}" class="menu-link"> ВЫЙТИ </a>
+
+                       <li class="men-l bas">
+                           <a href="{% url 'basket:main' %}" class="menu-link">
+                           {% if basket %}
+                               <span>
+                                    {{ basket.0.total_cost|floatformat:0 }} руб
+                                    ({{ basket.0.total_quantity }} шт)
+                                </span>
+                           {% endif %}
+                           </a>
+                       </li>
+
+                    {% else %}
+
+                    <a href="{% url 'auth:login' %}" class="menu-link otst">ВОЙТИ</a>
+                          <li class="men-l bas">
+                           <a href="{% url 'basket:main' %}" class="menu-link voity" >
+                           </a>
+                       </li>
+                </li>
+            {% endif %}
+    </ul>
+    </div>
+</div>

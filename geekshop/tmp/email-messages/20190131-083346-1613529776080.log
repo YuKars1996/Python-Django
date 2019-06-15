@@ -1,0 +1,14 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0YPRh9C10YLQvdC+0Lkg0LfQsNC/?=
+ =?utf-8?b?0LjRgdC4IE9sZWdrYQ==?=
+From: django@geekshop.local
+To: lyly1001@yandex.ru
+Date: Thu, 31 Jan 2019 05:33:46 -0000
+Message-ID: <154891282694.10388.7092501508520873313@KARSAKOVY.Dlink>
+
+Для подтверждения учетной записи Olegka на портале http://localhost:8000 перейдите по ссылке: 
+http://localhost:8000/auth/verify/lyly1001@yandex.ru/370598cdf5511de4b59734949603ae87f2d4a82c/
+-------------------------------------------------------------------------------

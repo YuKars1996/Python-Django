@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+        {% block title %}
+            {{ title|title }}
+        {% endblock %}
+    </title>
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/stil.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Cormorant+SC" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'fonts/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/font-awesome/css/font-awesome.css' %}">
+    {% endblock %}
+    {% block js %}
+    {% endblock %}
+</head>
+<body>
+	<div class="admin_container">
+
+           <h3 class="adminka"> Админка </h3>
+
+        {% block menu %}
+            <div class="admin_menu menu-head">
+                {% include 'adminapp/includes/inc_menu.html' %}
+            </div>
+        {% endblock %}
+
+
+        {% block container %}
+
+        {% endblock %}
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'authapp/base.html' %}
+{% load static %}
+
+{% block title %}
+             ToyRoom | Регистрация
+        {% endblock %}
+
+{% block container %}
+    <div class="bl-2">
+        <form method="post" class="form-horizontal">
+            {% csrf_token %}
+               <input type="hidden" name="next" value="{{ next }}">
+            {{ form.as_p }}
+            <input type="submit" value="Войти" class="form-control menu-link but3" >
+        </form>
+        <a href="{% url 'auth:register' %}" class="btn btn-round form-control menu-link but3">
+        Зарегистрироваться
+        </a>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block container %}
+    <div class="conteinerm-site">
+        <div class="top">
+            {% include 'mainapp/includes/inc__main_menu.html' %}
+            <div class="train">
+                <img src="{% static '/img/car.png' %}" alt="fd" height="200px">
+                <h2 class="text_training">Доставка осуществляется почтой Росии в&nbsp;любой город. <br> <br>Для того, чтобы уточнить,
+                    какой будет конечная стоимость отправки, вам необходимо связаться с&nbsp;нами любым способом, указанным в&nbsp;разделе &laquo;Контакты&raquo;.
+                    <br><br> Мы&nbsp;можем сразу празднично упаковать ваш подарок. Стоимость: 200&nbsp;рублей. <br><br>
+                    Возможен самовывоз из&nbsp;г.Выборг.</h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block container %}
+
+    <div class="top">
+        <div class="contair">
+            {% include 'mainapp/includes/inc__main_menu.html' %}
+            <div class="slider1">
+                <div class="text4">
+                    <h2 class="h2-sl">Приветствуем вас в&nbsp;нашей мастерской!</h2>
+                    <p class="sl_1_t"> Здесь вы&nbsp;найдёте игрушки, сувениры и&nbsp;предметы декора, которые украсят вашу жизнь новыми красками и&nbsp;эмоциями. <br><br> Заглянув в&nbsp;каждый раздел, вы&nbsp;сможете подобрать душевный, уютный подарок для себя и&nbsp;своих близких.
+                    </p>
+                </div>
+                <div class="imeg">
+                </div>
+            </div>
+            <div class="slider2">
+                <div class="cat2">
+                    <div class="hot_list">
+                        <div class="hot">
+                            <a href="{% url 'main:category' 3 %}"><img class="hot" src="{% static '/img/игрушки.png' %}" alt=""> </a>
+                        </div>
+                        <div class="hot">
+                            <a href="{% url 'main:category' 2 %}"><img class="hot" src="{% static '/img/куклы.png' %}" alt=""> </a>
+                        </div>
+                        <div class="hot">
+                            <a href="{% url 'main:category' 4 %}"><img class="hot" src="{% static '/img/подарки.png' %}" alt=""> </a>
+                        </div>
+                        <div class="hot">
+                            <a href="{% url 'main:category' 5 %}"><img class="hot" src="{% static '/img/распродажа.png' %}" alt=""> </a>
+                        </div>
+                    </div>
+                    <div class="tex">
+                        <h2 class="h2">Подборка лучших товаров</h2>
+                    </div>
+                    <div class="main_catalog">
+                        {% for product in products %}
+
+                        <a href="{% url 'main:product' product.pk %}" class="tov-cat mar"><img class="img-cat" src="/media/{{ product.image }}" alt="tovar_1">
+                            {{ product.category.name }}<br>{{ product.name }}<br>
+                            <h2>{{ product.price }}</h2>
+                        </a>
+                        {% endfor %}
+                        {% for product in products2 %}
+                        <a href="{% url 'main:product' product.pk %}" class="tov-cat mar"><img class="img-cat" src="/media/{{ product.image }}" alt="tovar_1">
+                            {{ product.category.name }}<br>{{ product.name }}<br>
+                            <h2>{{ product.price }}</h2>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

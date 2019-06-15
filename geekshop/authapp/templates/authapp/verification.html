@@ -1,0 +1,20 @@
+{% extends 'authapp/base.html' %}
+{% load static %}
+
+
+{% block container %}
+    <div class="veryfy">
+        {% if user %}
+            <h3 class="regist_auth">Поздравляем!</h3>
+            <br>
+            <h4 class="regist_auth">Пользователь {{user.username}} подтвержден.</h4>
+        {% else %}
+            <h3 class="regist_auth">Верификация не пройдена.</h3>
+        {% endif %}
+        <br>
+
+            <a href="{% url 'main:main' %}" class="button6">
+                на главную
+            </a>
+    </div>
+{% endblock %}

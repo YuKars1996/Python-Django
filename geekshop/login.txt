@@ -1,0 +1,8 @@
+login:
+	django
+pass:
+	geekbrains
+
+
+
+login: User1	pass: geekbrains

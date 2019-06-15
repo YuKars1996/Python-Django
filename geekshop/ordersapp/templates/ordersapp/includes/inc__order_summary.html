@@ -1,0 +1,31 @@
+{% if object %}
+<div class="center">
+    <div class="h2 display-5 jumbotron jumbotron-fluid">Заказ №{{ object.pk }} от {{ object.created|date:"Y-m-d H:i:s" }}</div>
+
+    <div class="lead">заказчик: {{ user.last_name }} {{ user.first_name }} </div>
+    <div class="lead">обновлен: {{ object.updated|date:"Y-m-d H:i:s" }}</div>
+    <div class="lead">cтатус: {{ object.get_status_display }}</div>
+    <hr>
+    <div class="lead">
+        общее количество товаров: <span class="order_total_quantity">{{ object.get_total_quantity }}</span>
+    </div>
+    <div class="lead">
+        общая стоимость: <span class="order_total_cost">{{ object.get_total_cost }}</span> руб
+    </div>
+{% else %}
+<div class=" jumbotron jumbotron-fluid center">
+    <div class="tabl_p">Новый заказ</div>
+    <hr>
+    <div class="tabl_p_2">заказчик: {{ user.last_name }} {{ user.first_name }} </div>
+    {% if basket.0 %}
+        <div class="tabl_p_2">
+            общее количество товаров: <span class="order_total_quantity">{{ basket.0.total_quantity }}</span>
+        </div>
+        <div class="tabl_p_2">
+            общая стоимость: <span class="order_total_cost">{{ basket.0.total_cost }}</span> руб
+        </div>
+    </div>
+    {% endif %}
+{% endif %}
+<hr>
+    </div>

@@ -1,0 +1,17 @@
+<div class="act_kn">
+{% if object.status == 'FM' %}
+    <a href="{% url 'orders:order_forming_complete' object.pk %}" class="btn btn-secondary razm">
+        оплатить
+    </a>
+    <a href="{% url 'orders:order_delete' object.pk %}" class="btn btn-secondary razm">
+        удалить
+    </a>
+{% endif %}
+
+<a href="{% url 'orders:index' %}" class="btn btn-secondary razm">
+    к списку заказов
+</a>
+<a href="{% url 'main:main' %}" class="btn btn-secondary razm">
+    на главную
+</a>
+</div>

@@ -1,0 +1,22 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block container %}
+    {% include 'mainapp/includes/inc__main_menu.html' %}
+        <div class="dinamic_prod">
+            <img class="img-cat2" src="/media/{{ product.image }}"><br>
+            <div class="t_prod">
+                <h3 class="zag_product">{{ product.name }}</h3><br>
+            <p class="text_product">{{ product.description }}</p><br>
+            <p class="text_product">{{ product.price }}<span>руб.</span></p><br>
+            <a href="{% url 'basket:add' product.pk %}" class="button">
+                Заказать
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </a><br>
+            <a href="{% url 'main:catalog' %}" class="button_katalog">
+                в каталог
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </a>
+                </div>
+        </div>
+{% endblock %}

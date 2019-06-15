@@ -1,0 +1,33 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+
+{% block container %}
+    {% include 'mainapp/includes/inc__main_menu.html' %}
+    {% include 'mainapp/includes/inc__product_menu.html' %}
+        <div class="product_list">
+            <h2 class="h2-sl5">Выбрана категория: "{% if request.resolver_match.url_name == 'category' and request.resolver_match.args.0 == '0' %}Все{% else %}{{ products.0.category.name|title }}{% endif %}"</h2>
+                <div class="paginator">
+                    {% if products.has_previous %}
+                        <a href="{% url 'main:category' category_pk products.previous_page_number %}" class="ssylky"><</a>
+                    {% endif %}
+                    <span class="current">
+                    страница {{ products.number }} из {{ products.paginator.num_pages }}
+                    </span>
+                    {% if products.has_next %}
+                        <a href="{% url 'main:category' category_pk products.next_page_number %}" class="ssylky">></a>
+                    {% endif %}
+                </div>
+            <div class="prod-cat">
+                {% for product in products %}
+                <div class="prod-cat">
+                    <a href="{% url 'main:product' product.pk %}" class="tov-cat"><img class="img-cat" src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
+                        <h4>{{ product.name }}</h4>
+                        <p>{{ product.description }} </p>
+                        <h4>{{ product.price }} руб</h4>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endblock %}

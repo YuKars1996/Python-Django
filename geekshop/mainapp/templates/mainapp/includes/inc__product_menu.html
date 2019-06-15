@@ -1,0 +1,16 @@
+
+
+
+<ul class="perehod">
+  <li class="men-l"><a href="{% url 'main:category' 0 %}"
+         class="sort {% if request.resolver_match.url_name == 'catalog' and request.resolver_match.args.0 == '0' %}active{% endif %}">
+            Все
+        </a></li>
+    {% for category in categories %}
+   <li class="men-l">
+       <a href="{% url 'main:category' category.pk %}" class="sort">{{ category.name }}</a>
+   </li>
+    {% endfor %}
+</ul>
+
+

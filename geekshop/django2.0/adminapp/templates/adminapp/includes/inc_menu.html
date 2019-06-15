@@ -1,0 +1,14 @@
+<ul class="menu_in">
+    <li class="men-l"><a href="{% url 'main:main' %}" class="menu-link">На сайт</a></li>
+    <li class="men-l ">
+        <a href="{% url 'admin:index' %}" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %} menu-link">
+            Пользователи
+        </a>
+    </li>
+    <li class="men-l">
+        <a href="{% url 'admin:categories' %}"
+        class="{% if request.resolver_match.url_name == 'categories' or category.name %}active{% endif %} menu-link">
+            Категории{% if category %}: <span>{{ category.name }}</span>{% endif %}
+        </a>
+    </li>
+</ul>

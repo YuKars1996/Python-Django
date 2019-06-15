@@ -1,0 +1,23 @@
+{% extends 'authapp/base.html' %}
+{% load static %}
+{% block title %}
+    ToyRoom | {{ user.first_name }}
+{% endblock %}
+
+{% block container %}
+        <div class="bl-3">
+    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </form>
+            <div class="reg">
+            <div class="user_avatar">
+            <img class="ava" src="/media/{{ user.avatar }}" alt='Фото профиля'>
+        </div>
+        <input class="form-control menu-link but" type="submit" value="сохранить">
+    <a href="{% url 'main:main' %}" class=" form-control last menu-link but but1">
+        На главную
+    </a>
+</div>
+        </div>
+{% endblock %}
